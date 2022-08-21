@@ -42,11 +42,9 @@ fn main() {
             _ => Box::new(BufReader::new(File::open(file_name).unwrap()))
         };
         if config.add_number_to_lines {
-            let mut n = 1_u64;
-            for line in buf.lines() {
+            for (line_num, line) in buf.lines().enumerate() {
                 let line = line.unwrap();
-                println!("{:>6}\t{}", n, line);
-                n += 1;
+                println!("{:>6}\t{}", line_num + 1, line);
             }
         } else {
             for line in buf.lines() {
