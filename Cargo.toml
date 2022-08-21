@@ -1,4 +1,5 @@
 [workspace]
 members = [
-    "02_echor"
+    "02_echor",
+    "03_catr"
 ]
